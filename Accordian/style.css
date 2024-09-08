@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.accordian{
+    width: 600px;
+    margin: auto;
+}
+body :nth-child(1){
+    margin-top: 6px;
+}
+.question{
+    background-color: brown;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.answer{
+    background-color:teal;
+    /* padding: 10px; */
+    max-height: 0;
+    overflow: hidden;
+}
+.own{
+    color: #fff;
+    font-size: 18px;
+}
+.answer.active{
+    max-height: fit-content;
+}
