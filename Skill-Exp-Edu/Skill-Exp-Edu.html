@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: #fff;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .skills-exp-edu{
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+            cursor: pointer;
+            margin-left: 12px;
+            /* text-decoration: underline; */
+            font-size: 26px;
+            /* transition: 0.60s; */
+        }
+        .skills-exp-edu h3:hover{
+            background-color: #AA3E60;
+            /* border-bottom: 2px solid #AA3E60; */
+            transition: 0.50s;
+        }
+        .skills-exp-edu h3{
+            border: 1px solid #AA3E60;
+            padding: 8px 10px;
+        }
+        .content1,.content2,.content3{
+            width: 60%;
+            padding: 12px;
+            font-size: 20px;
+            margin-top: 16px;
+        }
+        .content2{
+            display: none;
+        }
+        .content3{
+            display: none;
+        }
+        .content1 h2,.content2 h2,.content3 h2{
+            margin-bottom: 10px;
+            color: #AA3E60;
+        }
+        .content1 p,.content3 p{
+            margin-bottom: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="skills-exp-edu">
+        <h3 class="skillsSection">Skills</h3>
+        <h3 class="experienceSection">Experience</h3>
+        <h3 class="educationSection">Education</h3>
+    </div>
+    <div class="content1">
+        <h2>Seo</h2>
+        <p>Experienced in leveraging SEO best practices to optimize web content and boost search engine rankings, driving increased online visibility and engagement.</p>
+        <h2>Web Development</h2>
+        <p>Html | Css | JavaScript | Php</p>
+        <h2>Networking</h2>
+        <p>Routing | Switching | Firewall | Linux</p>
+    </div>
+    <div class="content2">
+        <h2>2024 Current</h2>
+        <p>Seo Speacilist at Growth Natives
+        Seasoned in SEO and digital marketing, consistently achieving superior online visibility and performance through strategic campaigns, data-driven insights, and innovative tactics.</p>
+    </div>
+    <div class="content3">
+        <h2>2020-2023</h2>
+        <p>Bachelors of Computer Applications Bca <br>
+        Islamia College of Science and Commerce</p>
+        <h2>2019</h2>
+        <p>12th Class Commerce <br>
+        Greenland Business School Kashmir</p>
+    </div>
+</div>
+<script>
+    const firstContent  =document.querySelector('.content1')
+    const secondContent  =document.querySelector('.content2')
+    const thirdContent  =document.querySelector('.content3')
+
+    const skills  =document.querySelector('.skillsSection')
+    const experience  =document.querySelector('.experienceSection')
+    const education  =document.querySelector('.educationSection')
+
+    skills.addEventListener('click',()=>{
+        secondContent.style.display = "none"
+        firstContent.style.display = "block"
+        thirdContent.style.display = "none"
+    })
+
+    experience.addEventListener('click',()=>{
+        firstContent.style.display = "none"
+        thirdContent.style.display = "none"
+        secondContent.style.display = "block"
+    })
+
+    education.addEventListener('click',()=>{
+        firstContent.style.display = "none"
+        secondContent.style.display = "none"
+        thirdContent.style.display = "block"
+    })
+
+</script>
+</body>
+</html>

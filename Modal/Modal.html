@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 50%;
+            padding: 20px;
+        }
+        .main p{
+            text-align: justify;
+        }
+        .btn {
+            background-color: #ff4c4c;  
+            color: white;              
+            border: none;               
+            padding: 10px 20px;         
+            border-radius: 5px;        
+            font-size: 16px;           
+            cursor: pointer;           
+            transition: background-color 0.3s ease;
+         }
+         .delete,.deleteModal {
+             background-color: #28a745;  /* Green background */
+             color: white;               /* White text */
+             border: none;               /* Remove border */
+             padding: 10px 20px;         /* Add padding */
+             border-radius: 5px;         /* Rounded corners */
+             font-size: 16px;            /* Text size */
+             cursor: pointer;            /* Pointer cursor on hover */
+             transition: background-color 0.3s ease;  /* Smooth hover transition */
+}
+.modal{
+    /* border: 1px solid black; */  
+    /* color: #fff; */
+    background-color: thistle;
+    border-radius: 4px;
+    width: 400px;
+    padding: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-60%,-20%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+
+}
+.cancel {
+  background-color: #6c757d;  /* Gray background */
+  color: white;               /* White text */
+  border: none;               /* Remove border */
+  padding: 10px 20px;         /* Add padding */
+  border-radius: 5px;         /* Rounded corners */
+  font-size: 16px;            /* Text size */
+  cursor: pointer;            /* Pointer cursor on hover */
+  transition: background-color 0.3s ease;  /* Smooth hover transition */
+}
+.succes{
+    color: red;
+    font-size: 20px;
+}
+    </style>
+</head>
+<body>
+<div class="main">
+    <h1>Modal Using Js</h1>
+    <p >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat explicabo accusamus dolores culpa! Voluptates pariatur sequi tempora laudantium necessitatibus amet, natus quas. A, id. Odio placeat dolorem ipsam sequi iste! Accusantium facilis quae illo soluta dicta optio. Numquam, sint unde?</p>
+    <p class="deleteThis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quisquam, qui nisi cum maiores, quibusdam, animi soluta facilis tempora magni eos voluptate inventore harum asperiores repellat iste maxime veritatis atque!</p>
+    <button class="btn">Delete Data</button>
+    <!-- modal Div -->
+    <div class="modal">
+        <h2>Are You Sure ?</h2>
+        <p>The Action Will Delete Your Data Permenantly</p>
+        <button class="deleteModal">Delete</button>
+        <button class="cancel">Cancel</button>
+    </div>
+    <h2 class="succes"></h2>
+</div>
+<script>
+    const btn = document.querySelector('.btn')
+    const deletebtn  = document.querySelector('.delete')
+    const modalPopUp  = document.querySelector('.modal')
+    const cancelModal  = document.querySelector('.cancel')
+    const deleteModal  = document.querySelector('.deleteModal')
+    const succes  = document.querySelector('.succes')
+    const pdelete  = document.querySelector('.deleteThis')
+
+    btn.addEventListener('click',()=>{
+        modalPopUp.style.display = "block"
+    })
+    cancelModal.addEventListener('click',()=>{
+        modalPopUp.style.display = "none"
+    })
+    deleteModal.addEventListener('click',()=>{
+        pdelete.innerText = " "
+        succes.innerText = "ParaGraph 2 Deleted Sucessfully! Now there is no Going Back"
+        modalPopUp.style.display = "none"
+
+            btn.disabled = true;
+            btn.style.opacity = "0.6";  // Optional: to visually indicate that the button is disabled
+            btn.style.cursor = "not-allowed"; 
+    })
+</script>
+</body>
+</html>

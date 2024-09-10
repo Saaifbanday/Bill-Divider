@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            background-color: aquamarine;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 12px ;
+            padding-block: 14px;
+        }
+       
+        ul{
+            display: flex;
+            justify-content: end;
+            margin-right: 50px;
+            max-width: 90%;
+            /* background-color: green; */
+            position: relative;
+        }
+        ul li{
+            list-style: none;
+            padding: 0 14px;
+            margin-left: 10px;
+        }
+       .ownClass{
+        display: none;
+        position: absolute;
+        right: 34px;
+        vertical-align: center;
+       }
+.hamburger{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background-color: yellow;
+    width: 100vw;
+    min-height: 100px;
+    display: none;
+}
+.hamburger li{
+    list-style: none;
+    padding: 6px;
+}
+       /* media querry */
+       @media (max-width:700px){
+        ul{
+            display: none;
+        }
+        .ownClass{
+            display: block;
+
+        }
+       }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Website.Com</h2>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>More</li>
+        </ul>
+        <div class="hamburger">
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>More</li>
+        </div>
+        <div class="ownClass">
+            <i class="fa-solid fa-bars own"></i>
+        </div>
+    </nav>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger')
+        const icon = document.querySelector('.own')
+
+        icon.addEventListener('click',()=>{
+         hamburger.style.display = "block"
+
+         if(hamburger.classList.contains('hamburger')){
+            hamburger.classList.remove('hamburger')
+            hamburger.style.display = "none"
+         }
+         else{
+            hamburger.classList.add('hamburger')
+         }
+        })
+    </script>
+</body>
+</html>
