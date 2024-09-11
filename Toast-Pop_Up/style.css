@@ -59,6 +59,7 @@ body{
     padding-left: 25px;
     /* font-size: 18px; */
     color: black;
+    cursor: pointer;
 }
 /* .toast.success{
     background-color: green;
