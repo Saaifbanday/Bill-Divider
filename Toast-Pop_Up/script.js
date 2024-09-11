@@ -37,6 +37,7 @@ showToastBtn.addEventListener('click', () => {
         //----Event Listner Added here
         closeIcon.addEventListener('click', () => {
             newToast.style.display = "none"
+            // newToast.classList.remove('toast')
         })
 
     }
@@ -62,8 +63,6 @@ showToastBtn.addEventListener('click', () => {
             newToast.style.display = "none"
         })
     }
-
-
 })
 
 reset.addEventListener('click', () => {
