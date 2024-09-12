@@ -7,6 +7,7 @@ body{
     /* background-image: url(https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
     background-color: black;
     color: #fff;
+    user-select: none;
 }
 
 .container{
@@ -57,9 +58,11 @@ body{
     user-select: none;
     animation: fromLeft 0.1s ease-in;
 }
+
 .toast.goLeft{
     animation: goLeft 0.1s ease-in forwards;
 }
+
 
 @keyframes fromLeft {
     0% {

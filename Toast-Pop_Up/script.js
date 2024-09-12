@@ -20,20 +20,6 @@ showToastBtn.addEventListener('click', () => {
     closeIcon.classList.add('closeIcon')
     newToast.append(closeIcon)
 
-    function removeToast(){
-        newToast.classList.add('goLeft')
-        setTimeout(()=>{
-            newToast.remove()
-        },100)
-    }
-    closeIcon.addEventListener('click', () => {
-        removeToast()
-    })
-
-    setTimeout(()=>{
-        removeToast()
-    },parseInt(durationInput.value)*1000) // coverts in miliseconds as settimeout only understands milliseonds
-
     if (horizontalPosition.value === "right") {
         toastContainer.classList.add('right')
     }
@@ -63,11 +49,27 @@ showToastBtn.addEventListener('click', () => {
         newToast.style.backgroundColor = "orange"
     }
 
+    function removeToast(){
+        
+        newToast.classList.add('goLeft')
+        setTimeout(()=>{
+            newToast.remove()
+        },100)
+    }
+    closeIcon.addEventListener('click', () => {
+        removeToast()
+    })
+
+    setTimeout(()=>{
+        removeToast()
+    },parseInt(durationInput.value)*1000) // coverts in miliseconds as settimeout only understands milliseonds
+
    
 })
 reset.addEventListener('click', () => {
     toastContainer.innerText = " "
     durationInput.value = parseInt(4)
+    message.value = 'This is a Toast Message'
 })
 
 
