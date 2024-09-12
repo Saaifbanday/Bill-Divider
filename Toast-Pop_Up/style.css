@@ -54,6 +54,7 @@ body{
     font-size: 17px;
     /* background-color: yellow; */
     /* display: none; */
+    user-select: none;
 }
 .closeIcon{
     padding-left: 25px;

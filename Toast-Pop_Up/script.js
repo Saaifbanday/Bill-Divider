@@ -52,7 +52,9 @@ showToastBtn.addEventListener('click', () => {
         newToast.style.backgroundColor = "crimson"
     // Event Listner Added here
         closeIcon.addEventListener('click', () => {
-            newToast.style.display = "none"
+            newToast.innerText = " "
+            newToast.classList.remove('toast')
+            
         })
 
     }
