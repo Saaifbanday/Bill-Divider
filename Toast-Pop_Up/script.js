@@ -6,6 +6,7 @@ const toastType = document.querySelector('#toastType')
 const message = document.querySelector('.toast-message')
 const reset = document.querySelector('.reset')
 const own = document.querySelector('.own')
+const durationInput = document.querySelector("#duration")
 
 showToastBtn.addEventListener('click', () => {
 
@@ -18,6 +19,20 @@ showToastBtn.addEventListener('click', () => {
     closeIcon.innerText = " ✕"
     closeIcon.classList.add('closeIcon')
     newToast.append(closeIcon)
+
+    function removeToast(){
+        newToast.classList.add('goLeft')
+        setTimeout(()=>{
+            newToast.remove()
+        },100)
+    }
+    closeIcon.addEventListener('click', () => {
+        removeToast()
+    })
+
+    setTimeout(()=>{
+        removeToast()
+    },parseInt(durationInput.value)*1000) // coverts in miliseconds as settimeout only understands milliseonds
 
     if (horizontalPosition.value === "right") {
         toastContainer.classList.add('right')
@@ -34,39 +49,25 @@ showToastBtn.addEventListener('click', () => {
 
     if (toastType.value === "success") {
         newToast.style.backgroundColor = "green"
-        //----Event Listner Added here
-        closeIcon.addEventListener('click', () => {
-            newToast.style.display = "none"
-            // newToast.classList.remove('toast')
-        })
-
+       
     }
     else if (toastType.value === "error") {
         newToast.style.backgroundColor = "red"
-        //----Event Listner Added here
-        closeIcon.addEventListener('click', () => {
-            newToast.style.display = "none"
-        })
+       
     }
     else if (toastType.value === "warning") {
         newToast.style.backgroundColor = "crimson"
-    // Event Listner Added here
-        closeIcon.addEventListener('click', () => {
-            newToast.innerText = " "
-            newToast.classList.remove('toast')
-            
-        })
-
+ 
     }
     else if (toastType.value === "info") {
         newToast.style.backgroundColor = "orange"
-    // Added Event Listner
-        closeIcon.addEventListener('click', () => {
-            newToast.style.display = "none"
-        })
     }
-})
 
+   
+})
 reset.addEventListener('click', () => {
     toastContainer.innerText = " "
+    durationInput.value = parseInt(4)
 })
+
+

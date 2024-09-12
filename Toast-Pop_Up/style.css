@@ -55,7 +55,32 @@ body{
     /* background-color: yellow; */
     /* display: none; */
     user-select: none;
+    animation: fromLeft 0.1s ease-in;
 }
+.toast.goLeft{
+    animation: goLeft 0.1s ease-in forwards;
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes goLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
 .closeIcon{
     padding-left: 25px;
     /* font-size: 18px; */
