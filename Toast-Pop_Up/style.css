@@ -47,7 +47,7 @@ body{
     border: none;
 }
 .toast{
-    width: 100%;
+    min-width: 100%;
     color: #fff;
     padding: 8px;
     text-align: center;
@@ -82,26 +82,13 @@ body{
     }
 }
 
-
-
 .closeIcon{
     padding-left: 25px;
     /* font-size: 18px; */
     color: black;
     cursor: pointer;
 }
-/* .toast.success{
-    background-color: green;
-}
-.toast.error{
-    background-color: red;
-}
-.toast.warning{
-    background-color: #FFA500;
-}
-.toast.info{
-    background-color: darkolivegreen;
-} */
+
 .toastContainer{
     /* background-color: yellow; */
     width: 20%;
@@ -117,16 +104,8 @@ body{
     left: auto;
     right: 2rem;
 }
-/* .toastContainer.left{
-    right: auto;
-    left: 2rem;
-} */
+
 .toastContainer.bottom{
     top: auto;
     bottom: 2rem;
 }
-/* .toastContainer.top{
-    bottom: auto;
-    top: 1rem;
-}
- */
