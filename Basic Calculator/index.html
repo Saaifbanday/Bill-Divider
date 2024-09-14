@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            max-width: 400px;
+            /* background-color: yellow; */
+            background-color: #e1ded3;
+            display: flex;
+            flex-direction: column;
+            padding: 12px;
+            margin: auto;
+            align-items: center;
+            min-height: 400px;
+            margin-top: 3rem;
+            border-radius: 4px;
+        }
+        form{
+            min-width: 80%;
+            margin-top: 6px;
+        }
+        label{
+            font-size: 22px;
+        }
+        .container input{
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 12px;
+            margin-top: 4px;
+        }
+        select {
+            padding: 4px;
+            font-size: 22px;
+            width: 40%;
+            text-align: center;
+            margin-top: 6px;
+        }
+       .Calculate{
+        padding: 12px;
+        background-color: cadetblue;
+        color: #fff;
+        border: none;
+        margin-top: 12px;
+        font-size: 16px;
+        margin-right: 8px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+       }
+       .h1{
+        color: #fff;
+        text-align: center;
+        margin-top: 22px;
+       }
+    </style>
+</head>
+<body>
+    <h1 class="h1">Basic Calculator</h1>
+    <div class="container">
+        <form action="">
+            <label for="">Enter First Number</label> <br>
+            <input type="number" id="first"> <br>
+            <label for="">Enter Second Number</label> <br>
+            <input type="number" id="second"> <br>
+            <label for="">Select Operator</label> <br>
+            <select id="operator"> 
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select> <br>
+            <button class="Calculate" type="button">Calculate</button>
+            <button class="reset Calculate" type="reset">Reset</button>
+        </form>
+        <h2 class="result"></h2>
+    </div>
+    <script>
+        const firstNum = document.querySelector('#first')
+        const secondtNum = document.querySelector('#second')
+        const operator = document.querySelector('#operator')
+        const Calculate = document.querySelector('.Calculate')
+        const result = document.querySelector('.result')
+        const reset = document.querySelector('.reset')
+
+        Calculate.addEventListener('click',()=>{
+            if(operator.value =="+"){
+                const sum = parseInt(firstNum.value)+parseInt(secondtNum.value)
+                result.innerText = sum
+            }
+            else  if(operator.value=="-"){
+                const sum = parseInt(firstNum.value)-parseInt(secondtNum.value)
+                result.innerText = sum
+            }
+            else  if(operator.value=="*"){
+                const sum = parseInt(firstNum.value)*parseInt(secondtNum.value)
+                result.innerText = sum
+            }
+            else  if(operator.value=="/"){
+                const sum = parseInt(firstNum.value)/parseInt(secondtNum.value)
+                result.innerText = sum
+            }
+            else{
+                result.innerText = "Enter Valid Input"
+            }
+        })
+        reset.addEventListener('click',()=>{
+            result.innerText = " "
+        })
+    </script>
+</body>
+</html>
