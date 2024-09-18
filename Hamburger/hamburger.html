@@ -39,6 +39,10 @@
         right: 34px;
         vertical-align: center;
        }
+       .onwClose{
+        display: none;
+        font-size: 20px;
+       }
 .hamburger{
     position: absolute;
     left: 0;
@@ -80,25 +84,41 @@
             <li>More</li>
         </div>
         <div class="ownClass">
-            <i class="fa-solid fa-bars own"></i>
+            <i class="fa-solid fa-bars ownOpen"></i>
+            <i class="fa-solid fa-xmark onwClose"></i>
         </div>
     </nav>
 
     <script>
         const hamburger = document.querySelector('.hamburger')
-        const icon = document.querySelector('.own')
+        const ownOpen = document.querySelector('.ownOpen')
+        const onwClose = document.querySelector('.onwClose')
 
-        icon.addEventListener('click',()=>{
-         hamburger.style.display = "block"
-
-         if(hamburger.classList.contains('hamburger')){
-            hamburger.classList.remove('hamburger')
-            hamburger.style.display = "none"
-         }
-         else{
-            hamburger.classList.add('hamburger')
-         }
+        ownOpen.addEventListener('click',()=>{
+            hamburger.style.display ="block"
+            ownOpen.style.display ="none"
+            onwClose.style.display = "block"
         })
+        onwClose.addEventListener('click',()=>{
+            hamburger.style.display = "none"
+            onwClose.style.display ="none"
+            ownOpen.style.display = "block"
+        })
+
+ /*        ownOpen.addEventListener('click', () => {
+    if (hamburger.style.display === "none") {
+        // If hamburger is hidden, show it and hide ownOpen and onwClose
+        hamburger.style.display = "block";
+        ownOpen.style.display = "none";
+        onwClose.style.display = "block";
+    } else {
+        // If hamburger is visible, hide it and show ownOpen and onwClose
+        hamburger.style.display = "none";
+        ownOpen.style.display = "block";
+        onwClose.style.display = "none";
+    }
+}); */
+
     </script>
 </body>
 </html>
